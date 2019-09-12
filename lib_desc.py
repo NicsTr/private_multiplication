@@ -38,7 +38,7 @@ from pyparsing import Word, alphanums, infixNotation, opAssoc
 
 scriptdir = os.path.dirname(
     os.path.realpath(__file__ if '__file__' in globals() else sys.argv[0]))
-sys.path.append(scriptdir)
+sys.path.append(scriptdir + "/private_multiplication/")
 import visitor
 
 class DescBaseNode(object):
