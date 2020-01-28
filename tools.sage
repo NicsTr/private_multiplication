@@ -29,7 +29,7 @@ def get_probes(desc):
             self.probes_sh = []
             self.probes_expl = []
 
-            for (r_name, i) in self.r_names.iteritems():
+            for (r_name, i) in self.r_names.items():
                 probe_r = vector(self.K, self.r_nb)
                 probe_sh = matrix(self.K, self.d+1)
                 probe_r[i] = 1
@@ -66,8 +66,8 @@ def get_probes(desc):
                 if np_r.is_zero():
                     # deterministic terms (i.e., with no random inside)
                     if sum(col.hamming_weight() for col in np_sh) >= 2:
-                        print "Trivial attack because of {}"\
-                            .format(np_expl + self.end_expl)
+                        print("Trivial attack because of {}"\
+                            .format(np_expl + self.end_expl))
                 else:
                     # we do not add terms with no random inside
                     # (called deterministic in the paper)
