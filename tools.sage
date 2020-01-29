@@ -38,8 +38,9 @@ def get_probes(desc):
                 self.probes_expl.append("r" + r_name)
     
             for (nshare, share) in enumerate(self.desc):
+                hexnums = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 self.nshare = nshare
-                self.end_expl = "- in c{:x}".format(self.nshare)
+                self.end_expl = "- in c{}".format(hexnums[self.nshare])
                 self.visit(
                     share,
                     vector(self.K, self.r_nb),
